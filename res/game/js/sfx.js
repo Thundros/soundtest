@@ -72,27 +72,16 @@
 
 		}
 
-		this.__switchAudio = function ( __objData ) {
+		function __switchAudio(record) {
+		  // `this` is the scene
 
-			this.__objData = __objData;
+		  if (currentSound) {
+			currentSound.stop();
+			this.sound.remove(currentSound);
+		  }
 
-			this.__scene = this.__objData.scene;
-			this.__sound = this.__objData.sound;
-			this.__record = this.__objData.record;
-			this.__currentSound = this.__objData.currentSound;
-
-			// `this` is the scene
-
-			console.log ( this.__currentSound );
-
-			if ( this.__currentSound ) {
-				this.__currentSound.stop ( );
-				this.__sound.remove ( this.__currentSound );
-			}
-
-			this.__currentSound = this.__sound.add ( this.__record.key, this.__record.config );
-			this.__currentSound.play ( );
-
+		  currentSound = this.sound.add(record.key, record.config);
+		  currentSound.play();
 		}
 
 	}
