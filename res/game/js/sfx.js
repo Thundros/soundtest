@@ -1,9 +1,7 @@
 
 	this.sfx = function ( ) {
 
-		this.__loadAudio = function ( __objData )  
-
-		{
+		this.__loadAudio = function ( __objData ) {
 
 			this.__objData = __objData;
 
@@ -16,19 +14,37 @@
 			console.error ( 'Loaded Sound ID' + ' :: ' + this.__soundID );
 			console.error ( 'Loaded Sound Data' + ' :: ' + JSON.stringify ( this.__soundData ) );
 
-			this.__sound = this.__snd.add ( this.__soundID, this.__soundData );
+			this.__sound = this.__snd.loadAudio ( this.__soundID, this.__soundData );
 
 			return {
 
 				sounds : {
 
-					sound: this.__sound, 
+					sound : this.__sound, 
 					soundID : this.__soundID, 
 					soundData : this.__soundData, 
 
 				}, 
 
 			};
+
+		}
+
+		this.__addAudio = function ( __objData )  
+
+		{
+
+			this.__objData = __objData;
+
+			this.__snd = this.__objData.sound;
+			this.__key = this.__objData.key;
+			this.__config = this.__objData.config;
+
+			if ( typeof ( this.__objData ) !== 'object' ) { return console.error ( 'ERROR :: { Please ensure you are using an `object` for `objectData` & try again } !' ); }
+
+			this.__currentSound = this.__snd.add ( this.__key, this.__config );
+
+			return this.__currentSound;
 
 		}
 
@@ -39,18 +55,23 @@
 			this.__objData = __objData;
 
 			this.__scene = this.__objData.scene;
-			this.__record = this.__objData.record;
 			this.__sound = this.__objData.sound;
-			this.__currentSound = this.__objData.currentSound;
+			this.__record = this.__objData.record;
 
 			if ( typeof ( this.__objData ) !== 'object' ) { return console.error ( 'ERROR :: { Please ensure you are using an `object` for `objectData` & try again } !' ); }
 
 			if ( typeof ( this.__record ) !== 'undefined' ) {
 
-				// `this` is the scene
+				console.error ( this.__record );
+				console.error ( this.__record.config );
 
-				this.__currentSound = this.__sound.add ( this.__record.key, this.__record.config );
-				this.__currentSound.play ( );
+				this.__snd = this.__addAudio ({
+					sound : this.__sound, 
+					key : this.__record.key, 
+					config : this.__record.config, 
+				});
+
+				this.__snd.play ( );
 
 			}
 
@@ -72,16 +93,31 @@
 
 		}
 
-		function __switchAudio(record) {
-		  // `this` is the scene
+		this.__switchAudio = function ( __objData ) {
 
-		  if (currentSound) {
-			currentSound.stop();
-			this.sound.remove(currentSound);
-		  }
+			this.__objData = __objData;
 
-		  currentSound = this.sound.add(record.key, record.config);
-		  currentSound.play();
+			this.__scene = this.__objData.scene;
+			this.__sound = this.__objData.sound;
+			this.__record = this.__objData.record;
+
+			if ( __currentSound ) {
+				__currentSound.stop ( );
+				this.__sound.remove ( __currentSound );
+			}
+
+			__currentSound = this.__addAudio ({
+				sound : this.__sound, 
+				key : this.__record.key, 
+				config : this.__record.config, 
+			});
+
+			this.__playAudio ({
+				scene : this.__scene, 
+				sound : this.__sound, 
+				record : this.__record, 
+			});
+
 		}
 
 	}

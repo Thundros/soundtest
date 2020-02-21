@@ -22,20 +22,26 @@
 
 		this.sfx = new sfx ( );
 
-		__currentSound = null;
-
-		this.sfx.__switchAudio({ 
+		this.sfx.__playAudio ({
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 0 ], 
-			currentSound : this.__currentSound, 
 		});
+
+		/*
 
 		this.sfx.__switchAudio({ 
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 1 ], 
-			currentSound : this.__currentSound, 
+		});
+
+		*/
+
+		this.sfx.__switchAudio({ 
+			scene : this, 
+			sound : this.sound, 
+			record : __sfx [ 0 ], 
 		});
 
 	}
