@@ -38,7 +38,7 @@
 			url : 'assets/bgm/lvl-1/smb-overworld-remix.mp3', 
 			config : {
 				volume : 0.1, 
-				loop : true, 
+				loop : false, 
 			}
 		}
 	];

@@ -32,16 +32,16 @@
 
 		*/
 
-		this.sfx.__switchAudio({ 
+		this.sfx.__nextTrack({ 
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 0 ], 
 		});
 
-		this.sfx.__switchAudio({ 
+		this.sfx.__nextTrack({ 
 			scene : this, 
 			sound : this.sound, 
-			record : __music [ 1 ], 
+			record : __music [ 3 ], 
 		});
 
 	}
