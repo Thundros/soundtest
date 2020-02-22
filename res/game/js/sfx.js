@@ -62,9 +62,6 @@
 
 			if ( typeof ( this.__record ) !== 'undefined' ) {
 
-				console.error ( this.__record );
-				console.error ( this.__record.config );
-
 				this.__snd = this.__addAudio ({
 					sound : this.__sound, 
 					key : this.__record.key, 
@@ -112,11 +109,9 @@
 				config : this.__record.config, 
 			});
 
-			this.__playAudio ({
-				scene : this.__scene, 
-				sound : this.__sound, 
-				record : this.__record, 
-			});
+			// __currentSound = this.__sound.add ( this.__record.key, this.__record.config );
+
+			__currentSound.play ( );
 
 		}
 

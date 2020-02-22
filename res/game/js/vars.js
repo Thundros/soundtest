@@ -5,9 +5,9 @@
 
 		{
 			key : 'bgMusic', 
-			url : 'assets/TownTheme.mp3', 
+			url : 'assets/bgm/lvl-1/TownTheme.mp3', 
 			config : {
-				volume : 0.01, 
+				volume : 0.1, 
 				loop : true, 
 			}
 		}, 
@@ -15,7 +15,7 @@
 		{
 
 			key : 'lvl1Music', 
-			url : 'assets/TownTheme2.mp3', 
+			url : 'assets/bgm/lvl-1/TownTheme2.mp3', 
 			config : {
 				volume : 0.1, 
 				loop : true, 
@@ -50,7 +50,7 @@
 		{
 
 			key : 'jumpA', 
-			url : 'assets/bgm/lvl-1/smb-overworld-remix.mp3', 
+			url : 'assets/sfx/characters/ayumi/jumpA.mp3', 
 			config : {
 				volume : 0.1, 
 				loop : true, 

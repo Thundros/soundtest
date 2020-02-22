@@ -22,18 +22,12 @@
 
 		this.sfx = new sfx ( );
 
+		/*
+
 		this.sfx.__playAudio ({
 			scene : this, 
 			sound : this.sound, 
-			record : __music [ 0 ], 
-		});
-
-		/*
-
-		this.sfx.__switchAudio({ 
-			scene : this, 
-			sound : this.sound, 
-			record : __music [ 1 ], 
+			record : __sfx [ 0 ], 
 		});
 
 		*/
@@ -41,7 +35,13 @@
 		this.sfx.__switchAudio({ 
 			scene : this, 
 			sound : this.sound, 
-			record : __sfx [ 0 ], 
+			record : __music [ 0 ], 
+		});
+
+		this.sfx.__switchAudio({ 
+			scene : this, 
+			sound : this.sound, 
+			record : __music [ 1 ], 
 		});
 
 	}
@@ -49,6 +49,22 @@
 	this.__update = function ( ) {
 
 		this.__stats.update ( );
+
+		/*
+
+		for ( let __i = 0; __i <= ( this.arrayLength ( this.__buttonText ) - 1 ); __i++ ) {
+
+			this.__button [ __i ].UpdateButton (
+
+				this.__fadeInMenu ( ).__buttonAlpha [ __i ], 
+				this.__fadeInMenu ( ).__buttonAlphaLevel [ __i ], 
+				this.__fadeInMenu ( ).__buttonAlphaDuration [ __i ]
+
+			);
+
+		}
+
+		*/
 
 	}
 
