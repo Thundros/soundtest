@@ -22,11 +22,15 @@
 
 		this.sfx = new sfx ( );
 
+		/*
+
 		this.sfx.__playAudio ({
 			scene : this, 
 			sound : this.sound, 
 			record : __sfx [ 0 ], 
 		});
+
+		*/
 
 		this.sfx.__nextTrack({ 
 			scene : this, 
@@ -37,7 +41,7 @@
 		this.sfx.__nextTrack({ 
 			scene : this, 
 			sound : this.sound, 
-			record : __music [ 3 ], 
+			record : __music [ 5 ], 
 		});
 
 	}
