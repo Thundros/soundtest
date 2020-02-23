@@ -36,7 +36,7 @@
 				volume : 0.1, 
 				loop : true, 
 			}
-		}
+		}, 
 	];
 
 	this.__sfx = 
