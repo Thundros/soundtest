@@ -31,6 +31,8 @@
 
 	];
 
+	/*
+
 	this.__sfx = 
 
 	[
@@ -43,6 +45,8 @@
 			}
 		}
 	];
+
+	*/
 
 	this.__currentSound = null;
 
