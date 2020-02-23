@@ -37,6 +37,25 @@
 				loop : true, 
 			}
 		}, 
+
+		{
+			key : 'lvl3Music', 
+			url : 'assets/bgm/lvl-1/DDR-Smile-DK-Kissy-Kissy.mp3', 
+			config : {
+				volume : 0.1, 
+				loop : true, 
+			}
+		}, 
+
+		{
+			key : 'lvl4Music', 
+			url : 'assets/bgm/lvl-1/A-Geishas-Dream-(Album-Version).mp3', 
+			config : {
+				volume : 0.1, 
+				loop : true, 
+			}
+		}, 
+
 	];
 
 	this.__sfx = 
