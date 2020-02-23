@@ -6,7 +6,6 @@
 		this.__sfx = __sfx;
 
 		this.__load.audio ( this.__music );
-		this.__load.audio ( this.__sfx );
 
 		this.__container = document.createElement ( 'div' );
 		document.body.appendChild ( this.__container );
