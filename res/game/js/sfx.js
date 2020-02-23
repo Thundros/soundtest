@@ -5,28 +5,12 @@
 
 			this.__objData = __objData;
 
-			this.__snd = this.__objData.sound;
-			this.__soundID = this.__objData.soundID;
-			this.__soundData = this.__objData.soundData;
+			this.__load = this.__objData.load;
+			this.__music = this.__objData.music;
 
 			if ( typeof ( this.__objData ) !== 'object' ) { return console.error ( 'ERROR :: { Please ensure you are using an `object` for `objectData` & try again } !' ); }
 
-			console.error ( 'Loaded Sound ID' + ' :: ' + this.__soundID );
-			console.error ( 'Loaded Sound Data' + ' :: ' + JSON.stringify ( this.__soundData ) );
-
-			this.__sound = this.__snd.loadAudio ( this.__soundID, this.__soundData );
-
-			return {
-
-				sounds : {
-
-					sound : this.__sound, 
-					soundID : this.__soundID, 
-					soundData : this.__soundData, 
-
-				}, 
-
-			};
+			this.__load.audio ( this.__music );
 
 		}
 
@@ -111,7 +95,7 @@
 
 		}
 
-		this.__nextTrack = function ( __objData ) {
+		this.__switchAudio = function ( __objData ) {
 
 			this.__objData = __objData;
 

@@ -2,9 +2,15 @@
 	this.__preload = function ( ) {
 
 		this.__load = this.load;
+		this.__sound = this.sound;
 		this.__music = __music;
 
-		this.__load.audio ( this.__music );
+		this.sfx = new sfx ( );
+
+		this.sfx.__loadAudio ({
+			load : this.__load, 
+			music : this.__music, 
+		});
 
 		this.__container = document.createElement ( 'div' );
 		document.body.appendChild ( this.__container );
@@ -17,8 +23,6 @@
 	}
 
 	this.__create = function ( ) {
-
-		this.sfx = new sfx ( );
 
 		/*
 
@@ -34,7 +38,7 @@
 
 		// This switches from track to new track
 
-		this.sfx.__nextTrack({ 
+		this.sfx.__switchAudio({ 
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 0 ], 
@@ -42,7 +46,7 @@
 
 		// This switches from track to new track
 
-		this.sfx.__nextTrack({ 
+		this.sfx.__switchAudio({ 
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 2 ], 
