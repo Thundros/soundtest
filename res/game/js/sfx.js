@@ -1,7 +1,11 @@
 
-	this.sfx = function ( ) {
+	this.sfx = function ( )
 
-		this.__loadAudio = function ( __objData ) {
+	{
+
+		this.__loadAudio = function ( __objData )
+
+		{
 
 			this.__objData = __objData;
 
@@ -75,7 +79,9 @@
 
 		}
 
-		this.__stopAudio = function ( __objData ) {
+		this.__stopAudio = function ( __objData )
+
+		{
 
 			this.__objData = __objData;
 
@@ -84,7 +90,9 @@
 
 		}
 
-		this.__destroyAudio = function ( __objData ) {
+		this.__destroyAudio = function ( __objData )
+
+		{
 
 			this.__objData = __objData;
 
@@ -95,7 +103,9 @@
 
 		}
 
-		this.__switchAudio = function ( __objData ) {
+		this.__switchAudio = function ( __objData )
+
+		{
 
 			this.__objData = __objData;
 
