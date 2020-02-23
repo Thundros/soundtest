@@ -22,15 +22,11 @@
 
 		this.sfx = new sfx ( );
 
-		/*
-
 		this.sfx.__playAudio ({
 			scene : this, 
 			sound : this.sound, 
 			record : __sfx [ 0 ], 
 		});
-
-		*/
 
 		this.sfx.__nextTrack({ 
 			scene : this, 

@@ -37,34 +37,12 @@
 			this.__objData = __objData;
 
 			this.__snd = this.__objData.sound;
-			this.__record = this.__objData.record;
-			this.__key = this.__record.key;
-			this.__config = this.__record.config;
+			this.__key = this.__objData.key;
+			this.__config = this.__objData.config;
 
 			if ( typeof ( this.__objData ) !== 'object' ) { return console.error ( 'ERROR :: { Please ensure you are using an `object` for `objectData` & try again } !' ); }
 
-			if ( typeof ( this.__record ) !== 'undefined' ) {
-
-				this.__currentSound = this.__snd.add ( this.__key, this.__config );
-
-			}
-
-			else {
-
-				console.error (
-					'ERROR' + ' ' + '{' + ' ' + '\'' + 'this.__addAudio ( )' + '\'' + ' ' + '}' + ' :: ' + ' ' + 
-					'\r\n\r\n' + 
-						'{' + '\r\n' + 
-							'\r\n' + 
-							'\t\'this.__record\'' + ' ' + 'is' + ' ' + '\'' + this.__record + '\'' + ' ' + '&' + ' ' + 'does not exist!' + '\r\n' + 
-							'\tPlease correct' + ' ' + '\'' + this.__record + '\'' + ' ' + 'Array' + ' ' + '\'' + 'index' + ' ' + 'value' + '\'' + ' ' + '& try again!' + '\r\n\r\n' + 
-							'\tFunction Exited Successfully!' + '\r\n' + 
-							'\r\n' + 
-						'}' + 
-					'\r\n\r\n'
-				);
-
-			}
+			this.__currentSound = this.__snd.add ( this.__key, this.__config );
 
 			return this.__currentSound;
 
@@ -84,7 +62,13 @@
 
 			if ( typeof ( this.__record ) !== 'undefined' ) {
 
-				__currentSound.play ( );
+				this.__snd = this.__addAudio ({
+					sound : this.__sound, 
+					key : this.__record.key, 
+					config : this.__record.config, 
+				});
+
+				this.__snd.play ( );
 
 			}
 
@@ -103,7 +87,6 @@
 					'\r\n\r\n'
 				);
 
-
 			}
 
 		}
@@ -113,10 +96,7 @@
 			this.__objData = __objData;
 
 			this.__currentSound = this.__objData.currentSound;
-
-			if ( this.__currentSound ) {
-				this.__currentSound.stop ( );
-			}
+			this.__currentSound.stop ( );
 
 		}
 
@@ -125,11 +105,9 @@
 			this.__objData = __objData;
 
 			this.__sound = this.__objData.sound;
-			this.__currentSound = this.__objData.currentSound;
+			this.__currentSound = __currentSound;
 
-			if ( this.__currentSound ) {
-				this.__sound.remove ( this.__currentSound );
-			}
+			this.__sound.remove ( __currentSound );
 
 		}
 
@@ -155,16 +133,12 @@
 
 				__currentSound = this.__addAudio ({
 					sound : this.__sound, 
-					record : this.__record, 
 					key : this.__record.key, 
 					config : this.__record.config, 
 				});
 
-				this.__playAudio ({
-					scene : this.__scene, 
-					sound : this.__sound, 
-					record : this.__record, 
-				});
+				__currentSound = this.__sound.add ( this.__record.key, this.__record.config );
+				__currentSound.play ( );
 
 			}
 
@@ -182,8 +156,6 @@
 						'}' + 
 					'\r\n\r\n'
 				);
-
-				return;
 
 			}
 

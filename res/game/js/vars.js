@@ -2,7 +2,6 @@
 	this.__music = 
 
 	[
-
 		{
 			key : 'bgMusic', 
 			url : 'assets/bgm/lvl-1/TownTheme.mp3', 
@@ -13,7 +12,6 @@
 		}, 
 
 		{
-
 			key : 'lvl1Music', 
 			url : 'assets/bgm/lvl-1/TownTheme2.mp3', 
 			config : {
@@ -23,7 +21,6 @@
 		}, 
 
 		{
-
 			key : 'lvl1MusicA', 
 			url : 'assets/bgm/lvl-1/SMILE.mp3', 
 			config : {
@@ -33,12 +30,11 @@
 		}, 
 
 		{
-
 			key : 'lvl2Music', 
 			url : 'assets/bgm/lvl-1/smb-overworld-remix.mp3', 
 			config : {
 				volume : 0.1, 
-				loop : false, 
+				loop : true, 
 			}
 		}
 	];
@@ -46,18 +42,14 @@
 	this.__sfx = 
 
 	[
-
 		{
-
 			key : 'jumpA', 
-			url : 'assets/sfx/characters/ayumi/jumpA.mp3', 
+			url : 'assets/bgm/lvl-1/SMILE.mp3', 
 			config : {
 				volume : 0.1, 
-				loop : true, 
+				loop : false, 
 			}
-
 		}
-
 	];
 
 	this.__currentSound = null;
