@@ -3,7 +3,6 @@
 
 		this.__load = this.load;
 		this.__music = __music;
-		this.__sfx = __sfx;
 
 		this.__load.audio ( this.__music );
 
