@@ -41,7 +41,7 @@
 		this.sfx.__nextTrack({ 
 			scene : this, 
 			sound : this.sound, 
-			record : __music [ 5 ], 
+			record : __music [ 4 ], 
 		});
 
 	}
