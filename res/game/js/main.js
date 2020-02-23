@@ -24,6 +24,8 @@
 
 		/*
 
+		// This plays the track without switching to another track
+
 		this.sfx.__playAudio ({
 			scene : this, 
 			sound : this.sound, 
@@ -32,11 +34,15 @@
 
 		*/
 
+		// This switches from track to new track
+
 		this.sfx.__nextTrack({ 
 			scene : this, 
 			sound : this.sound, 
 			record : __music [ 0 ], 
 		});
+
+		// This switches from track to new track
 
 		this.sfx.__nextTrack({ 
 			scene : this, 
